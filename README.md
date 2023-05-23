@@ -126,6 +126,40 @@ It is not necessary to build the screens a user would interact with, however, as
 - [Angular CLI](https://github.com/angular/angular-cli) version 15.2.5.
 - [Angular Material](https://material.angular.io/)
 
+## How to Use
+
+The Express application runs by default on `http://localhost:4000` and has the following endpoints:
+
+ - `http://localhost:4000/api/score` - post endpoint that expects the form object - complete the form and the object's shape is shown on the last step.
+
+### Running the Express Backend Application
+
+You can clone my the whole [repo](https://github.com/jdegand/origin-backend-take-home-assignment) and checkout to the angular branch or just clone the angular branch.  
+
+```bash 
+
+git clone https://github.com/jdegand/origin-backend-take-home-assignment.git -b angular --single-branch
+
+# cd into the directory
+npm install
+
+npm start
+```
+
+### Running the Angular Application
+
+Run the express application first.  Use two terminals.  
+
+```bash
+
+git clone https://github.com/jdegand/origin-angular-frontend.git
+
+# cd into the directory
+npm install 
+
+npm start
+```
+
 ## Thoughts
 
 - Reworked my express backend interfaces and risk calculation function to match the personalInfo object.
@@ -142,7 +176,6 @@ It is not necessary to build the screens a user would interact with, however, as
 
 ## Continued Development
 
-- Add the reworked backend to a branch in past repo and add how to use section
 - Styling tweaks for desktop
 - Confirm step rework versus just rendering a json object
 - Angular 16 update ?
