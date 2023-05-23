@@ -1,0 +1,24 @@
+<h1>Origin Insurance Eligibility</h1>
+
+<!--
+<div>
+    <pre>{{responseState | json}}</pre>
+</div>
+-->
+
+<div>
+    <dl>
+        <dt>Auto</dt>
+        <dd>{{responseState?.auto}}</dd>
+        <dt>Disability</dt>
+        <dd>{{responseState?.disability}}</dd>
+        <dt>Home</dt>
+        <dd>{{responseState?.home}}</dd>
+        <dt>Life</dt>
+        <dd>{{responseState?.life}}</dd>
+    </dl>
+</div>
+
+<div>
+    <a routerLink="">Reset</a>
+</div>

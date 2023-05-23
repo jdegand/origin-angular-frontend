@@ -1,0 +1,111 @@
+<form [formGroup]="personalInfo" (ngSubmit)="submit()">
+    <mat-stepper [linear]="isLinear" orientation="vertical">
+        <mat-step [stepControl]="personalGroup">
+            <ng-template matStepLabel>Personal Info</ng-template>
+            <div formGroupName="personal">
+                <ng-template matStepContent>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Age</mat-label>
+                        <input matInput type="number" formControlName="age">
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Income</mat-label>
+                        <input matInput type="number" formControlName="income">
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Marital Status</mat-label>
+                        <mat-select formControlName="marital_status">
+                            <mat-option value="married">Married</mat-option>
+                            <mat-option value="single">Single</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <button type="button" color="primary" mat-raised-button matStepperNext>Next</button>
+                </ng-template>
+            </div>
+        </mat-step>
+        <mat-step [stepControl]="houseGroup">
+            <ng-template matStepLabel>House</ng-template>
+            <div formGroupName="house">
+                <ng-template matStepContent>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Dependents</mat-label>
+                        <input matInput type="number" formControlName="dependents">
+                    </mat-form-field>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Ownership Status</mat-label>
+                        <mat-select formControlName="ownership_status">
+                            <mat-option value="mortgaged">Mortgaged</mat-option>
+                            <mat-option value="owned">Owned</mat-option>
+                            <mat-option value="none">None</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <button type="button" color="warn" mat-raised-button matStepperPrevious>Back</button>
+                    <button type="button" color="primary" mat-raised-button matStepperNext>Next</button>
+                </ng-template>
+            </div>
+        </mat-step>
+        <mat-step [stepControl]="vehicleGroup">
+            <ng-template matStepLabel>Vehicle</ng-template>
+            <div formGroupName="vehicle">
+                <ng-template matStepContent>
+                    <mat-form-field appearance="fill">
+                        <mat-label>Year</mat-label>
+                        <input matInput type="number" formControlName="year">
+                    </mat-form-field>
+                    <button type="button" color="warn" mat-raised-button matStepperPrevious>Back</button>
+                    <button type="button" color="primary" mat-raised-button matStepperNext>Next</button>
+                </ng-template>
+            </div>
+        </mat-step>
+        <mat-step [stepControl]="questionsGroup">
+            <ng-template matStepLabel>Questions</ng-template>
+            <div formGroupName="questions">
+                <div>
+                    <ng-template matStepContent>
+                        <div>
+                            <mat-label>Do you smoke?</mat-label>
+                            <mat-radio-group formControlName="question1" aria-label="Do you smoke?">
+                                <mat-radio-button value="true">True</mat-radio-button>
+                                <mat-radio-button value="false">False</mat-radio-button>
+                            </mat-radio-group>
+                        </div>
+                        <div>
+                            <mat-label>Do you drink alcohol?</mat-label>
+                            <mat-radio-group formControlName="question2" aria-label="Do you drink alcohol?">
+                                <mat-radio-button value="true">True</mat-radio-button>
+                                <mat-radio-button value="false">False</mat-radio-button>
+                            </mat-radio-group>
+                        </div>
+
+                        <div>
+                            <mat-label>Have you ever declared bankruptcy?</mat-label>
+                            <mat-radio-group formControlName="question3"
+                                aria-label="Have you ever declared bankruptcy?">
+                                <mat-radio-button value="true">True</mat-radio-button>
+                                <mat-radio-button value="false">False</mat-radio-button>
+                            </mat-radio-group>
+                        </div>
+
+                        <button type="button" color="warn" mat-raised-button matStepperPrevious>Back</button>
+                        <button type="button" color="primary" mat-raised-button matStepperNext>Next</button>
+                    </ng-template>
+                </div>
+
+            </div>
+        </mat-step>
+        <mat-step>
+            <ng-template matStepLabel>Review</ng-template>
+            <ng-template matStepContent>
+                <div>
+                    <pre>{{this.personalInfo.value | json}}</pre>
+                </div>
+                <button type="button" mat-raised-button color="warn" matStepperPrevious>Back</button>
+                <button type="submit" mat-raised-button color="accent" matStepperNext>Submit</button>
+            </ng-template>
+        </mat-step>
+    </mat-stepper>
+</form>
+
+<div *ngIf="response">
+    <pre>{{response | json }}</pre>
+</div>
