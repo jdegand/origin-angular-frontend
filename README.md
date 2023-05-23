@@ -1,6 +1,6 @@
 # Origin Angular Frontend
 
-This is expands upon this [challenge](https://github.com/OriginFinancial/origin-backend-take-home-assignment) and [my own solution](https://github.com/jdegand/origin-backend-take-home-assignment).
+This expands upon this [challenge](https://github.com/OriginFinancial/origin-backend-take-home-assignment) and [my own solution](https://github.com/jdegand/origin-backend-take-home-assignment).
 
 ## Screenshots
 
