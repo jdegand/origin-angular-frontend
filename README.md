@@ -180,6 +180,7 @@ npm start
 - Confirm step rework versus just rendering a json object
 - Angular 16 update ?
 - Testing
+- Problem with form component html -> warnings about incorrect use of form label 
 
 ## Useful Resources
 
