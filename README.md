@@ -173,6 +173,12 @@ npm start
 - The grouping of the various categories could be different i.e. dependents could go with house or personal.  The risk questions could easily be changed.  I thought about adding various extras like name, address, etc but ultimately, the form has to match the backend so I left it as is.  Extra field could be added and not be factored in to the risk calculation.
 - Not a fan of most of the preset Angular Material themes - most of the color combinations are terrible.  
 - Desktop version is just the mobile version stretched.
+- Chrome shows error of "Incorrect use of label for="FORM_ELEMENT" -> problem comes from implementation of mat-select
+- Error reappears on any step with a mat-select 
+- Label appears to be linked to the select so error may be a false positive - syntax is not obviously incorrect
+- The select is inside a mat-form-field so the mat-label should be directly linked to the select and you can't use a matInput attribute on a mat-select.    
+- Putting a formControlName on a mat-select is problematic ?
+- mat-select does have more problems than other angular material components - changing back to a select tag would require styling adjustments
 
 ## Continued Development
 
@@ -196,3 +202,4 @@ npm start
 - [Medium](https://medium.com/javascript-everyday/keep-data-in-the-state-object-during-navigation-in-angular-5657af156fb8) - keep data in the state object during navigation
 - [Stack Overflow](https://stackoverflow.com/questions/52663044/angular-only-allow-routing-if-routed-using-router-navigate-method) - only allow routing with router navigate
 - [Stack Overflow](https://stackoverflow.com/questions/263965/how-can-i-convert-a-string-to-boolean-in-javascript) - convert string to boolean
+- [Stack Overflow](https://stackoverflow.com/questions/56882657/mat-select-value-doesnt-work-with-formcontrolname) - mat select value doesn't work with formControlName
